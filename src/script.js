@@ -5,6 +5,9 @@ import { fetchBreeds, fetchCatByBreed } from './js/api';
 import { createMarkup, createMarkupCat } from './js/markup';
 import refs from './js/refs';
 
+loaderEl.classList.add('visually-hidden')
+catInfo.classList.add('visually-hidden')
+
 refs.selectEl.addEventListener('change', onValueId);
 fetchBreeds()
   .then(arr => {
