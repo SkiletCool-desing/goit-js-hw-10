@@ -43,5 +43,6 @@ function load() {
 function slim() {
   new SlimSelect({
     select: refs.selectEl,
+    placeholder: 'data-id="4iqakn21'
   });
 }
