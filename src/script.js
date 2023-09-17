@@ -9,11 +9,12 @@ refs.loaderEl.classList.add('visually-hidden');
 refs.catInfoEl.classList.add('visually-hidden');
 
 refs.selectEl.addEventListener('change', onValueId);
+
 fetchBreeds()
   .then(arr => {
     load();
-
-    return (refs.selectEl.innerHTML = createMarkup(arr.data));
+    refs.selectEl.innerHTML = '<option value= "" selected disabled>Choose your cat</option> '
+    return (refs.selectEl.innerHTML += createMarkup(arr.data));
   })
   .then(() => slim())
   .catch(fetchError);
@@ -43,6 +44,5 @@ function load() {
 function slim() {
   new SlimSelect({
     select: refs.selectEl,
-    placeholder: 'data-id="4iqakn21'
   });
 }
