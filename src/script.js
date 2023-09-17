@@ -4,6 +4,7 @@ import SlimSelect from 'slim-select';
 import { fetchBreeds, fetchCatByBreed } from './js/api';
 import { createMarkup, createMarkupCat } from './js/markup';
 import refs from './js/refs';
+import { Option } from 'slim-select/dist/store';
 
 refs.loaderEl.classList.add('visually-hidden');
 refs.catInfoEl.classList.add('visually-hidden');
@@ -13,7 +14,7 @@ refs.selectEl.addEventListener('change', onValueId);
 fetchBreeds()
   .then(arr => {
     load();
-    refs.selectEl.innerHTML = '<option value= "" selected disabled>Choose your cat</option> '
+    refs.selectEl.innerHTML = '<option value= "" selected disabled>Choose your cat</option> ';
     return (refs.selectEl.innerHTML += createMarkup(arr.data));
   })
   .then(() => slim())
