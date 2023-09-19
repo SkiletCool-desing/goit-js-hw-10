@@ -31,9 +31,6 @@ function onValueId(e) {
     .catch(fetchError);
 }
 function fetchError() {
-  Report.failure(refs.error.textContent, '');
-}
-function fetchError() {
   Report.failure(refs.error.textContent, '');refs.catInfoEl.classList.add('visually-hidden');
 }
 function success() {
