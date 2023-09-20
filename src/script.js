@@ -5,11 +5,7 @@ import { fetchBreeds, fetchCatByBreed } from './js/api';
 import { createMarkup, createMarkupCat } from './js/markup';
 import refs from './js/refs';
 
-refs.loaderEl.classList.add('visually-hidden');
-refs.catInfoEl.classList.add('visually-hidden');
-
 refs.selectEl.addEventListener('change', onValueId);
-
 fetchBreeds()
   .then(arr => {
     load();
@@ -32,9 +28,6 @@ function onValueId(e) {
 }
 function fetchError() {
   Report.failure(refs.error.textContent, '');
-}
-function fetchError() {
-  Report.failure(refs.error.textContent, '');refs.catInfoEl.classList.add('visually-hidden');
 }
 function success() {
   Notify.success('Search was successful!)', '');
